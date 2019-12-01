@@ -3,5 +3,4 @@ gems:
   - rspec
   - rails
   - nokogiri
-  - mechanize
   - omelchuk
