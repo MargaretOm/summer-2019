@@ -1,35 +1,52 @@
-# Rubizza Survival Camp: Summer 2019
+# Branch 1: Top-Ruby-gems
 
-![](https://s3.eu-central-1.amazonaws.com/rubizza/rubizza-logo.png)
+As part of the assignment, we write a console utility that determines the popularity of Ruby gems.
+The launch is performed by the following command:
+
+```bash
+ruby top_gems.rb
+```
 
 
-# [Как сдавать задания](#how-to-submit)
+For each gem in this list, we find it Github repo, from the page of this repo we get the following data: Used by, Watch, Star, Fork, Contributors, Issues.
 
-Алгоритм примерно следующий:
+We can pass additional arguments:
 
-* Для сдачи всех заданий каждому нужно будет [форкнуть](http://lmgtfy.com/?q=%D1%84%D0%BE%D1%80%D0%BA%D0%BD%D1%83%D1%82%D1%8C) этот репозиторий.
-* Каждый курсант ( он же участник курсов ) должен в этом репозитории создать папку со своим личным номером ( например __3522__ ).
-* Каждое задание должно выполняться в отдельной [ветке](http://lmgtfy.com/?q=github+fork) и для него необходимо создать отдельную папку, которая будет отражать номер задания. ( например для задания 0 - __3522/0/__ )
-* После завершения задания - нужно выслать [pull request](http://lmgtfy.com/?q=pull+request) ( он же далее PR ) в master-ветку этого репозитория. Формат названия PR должен быть __персональный номер__ - __номер задания__ ( например 3522 - 0 ). Обратите внимание что при отправки нужно заполнить все поля в шаблоне.
-* PR после отправки всегда будет проверять шальная собака на соответствие человеческим стилям. Если стиль кода ей не понравится - она будет ругаться.
-* Только если собака довольна - на вашу задачу будет назначен ментор, который уже будет просматривать код и принимать задание.
-* После того как ментор решил что задание выполнено полностью и ему все нравится - он зальет ваше задание в основной репозиторий. Именно этот момент и будет считаться временем сдачи задания.
+- The `--top` parameter, shows the number of gems according to the rating:
 
-# Задание 0
+```bash
+ruby top_gems.rb --top=2
+```
 
-Чтобы показать все прелести языка Ruby вам придется пройти через сложный путь к просветлению.
-На выходе вы получите незабываемые впечатление и навыки написания кода согласно тому, как все привыкли его видеть!
-Запомните, что каждое следующее задание должно строго следовать букве закона и быть на [стиле](https://github.com/rubocop-hq/ruby-style-guide)!
+- The `--name` parameter, displays all Gems according to the rating whose name includes the given word:
 
-0. Форкаем [репозиторий](https://github.com/rubizza-camp/ruby_koans)
-1. Фиксим все коэны. (см. инструкцию к репу ruby_koans)
-2. ...
-4. Profit!
+```bash
+ruby top_gems.rb --name=active
+```
 
-### Как доказать, что я справился
+- The `--file` parameter, which is the path to the yml file containing the list of gem names:
 
-* Все решения ( вместе с кодом решения ) должны быть залиты в папку, которая отражает номер текущего задания.
-* Видео, прикрепленное к PR, обязательно должно показывать, что все koans пройдены.
+```bash
+ruby top_gems.rb --file=gems.yml
+```
+![](top_gems.gif)
 
-### Дедлайн
-2019-07-09 18:00:00 UTC+3
+# Branch 2: Telegram-bot
+
+After registration, he will be able to “accept the shift” - /checkin and “hand over the shift” - /checkout.
+
+Registration starts after the “/ start” command and prompts you to enter a number. If such a number already exists or the number does not match any of the list of all numbers (which are in the file in the _data_ folder of your project), then an error is displayed to the user. Otherwise, registration is successful and the user number along with his telegram_id is stored in the database.
+
+![](bot.gif)
+
+# Branch 3: Sinatra-city-places
+
+On the main page, a list of places with a name, description and coordinates.
+
+Leave feedback can only registered and logged in users.
+
+## Technical description
+
+For this assignment, used [Sinatra] (http://sinatrarb.com/). The database is sqlite.
+
+![](places.gif)
